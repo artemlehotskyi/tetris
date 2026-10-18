@@ -3,26 +3,25 @@ namespace Tetris;
 public class Board
 {
 
-    private int[,] grid;
+    private int[,] _grid;
     public int Width { get; }
     public int Height { get; }
-    
     
     public Board(int width, int height)
     {
         Width = width;
         Height = height;
-        grid = new int[height, width];
+        _grid = new int[height, width];
     }
     
-    public bool isInside(int x, int y)
+    public bool IsInside(int x, int y)
     {
         return x >= 0 && x < Width && y >= 0 && y < Height;
     }
-
+    
     public bool IsEmpty(int x, int y)
     {
-        return isInside(x, y) && grid[y, x] == 0;
+        return IsInside(x, y) && _grid[y, x] == 0;
     }
 
     public void Draw()
@@ -31,7 +30,7 @@ public class Board
         {
             for (int x = 0; x < Width; x++)
             {
-                if (grid[y, x] == 0)
+                if (_grid[y, x] == 0)
                 {
                     Console.Write('.');
                 }
@@ -43,5 +42,13 @@ public class Board
             Console.WriteLine();
         }
     }
-    
+    public bool SetCell(int x, int y, int value)
+    {
+        if (!IsInside(x, y))
+        {
+            return false;
+        }
+        _grid[y, x] = value;
+        return true;
+    }
 }
