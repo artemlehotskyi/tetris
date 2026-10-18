@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Tetris">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14111F"/>
+      <stop offset="55%" stop-color="#0E0B17"/>
+      <stop offset="100%" stop-color="#1A1030"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#512BD4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#512BD4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#512BD4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <circle cx="1010" cy="70" r="300" fill="url(#glow)"/>
+
+  <!-- falling T-piece over a settled stack, 32px cells -->
+  <g fill="#512BD4" fill-opacity="0.55">
+    <rect x="948" y="60" width="30" height="30" rx="3"/>
+    <rect x="980" y="60" width="30" height="30" rx="3"/>
+    <rect x="1012" y="60" width="30" height="30" rx="3"/>
+    <rect x="980" y="92" width="30" height="30" rx="3"/>
+  </g>
+  <g fill="#8B5CF6" fill-opacity="0.22">
+    <rect x="884" y="220" width="30" height="30" rx="3"/>
+    <rect x="916" y="220" width="30" height="30" rx="3"/>
+    <rect x="948" y="220" width="30" height="30" rx="3"/>
+    <rect x="1044" y="220" width="30" height="30" rx="3"/>
+    <rect x="1076" y="220" width="30" height="30" rx="3"/>
+    <rect x="852" y="252" width="30" height="30" rx="3"/>
+    <rect x="884" y="252" width="30" height="30" rx="3"/>
+    <rect x="916" y="252" width="30" height="30" rx="3"/>
+    <rect x="948" y="252" width="30" height="30" rx="3"/>
+    <rect x="980" y="252" width="30" height="30" rx="3"/>
+    <rect x="1044" y="252" width="30" height="30" rx="3"/>
+    <rect x="1076" y="252" width="30" height="30" rx="3"/>
+    <rect x="1108" y="252" width="30" height="30" rx="3"/>
+  </g>
+
+  <rect x="72" y="104" width="6" height="112" rx="3" fill="url(#accent)"/>
+
+  <text x="112" y="182" font-family="'SF Pro Display','Segoe UI',Inter,Helvetica,Arial,sans-serif"
+        font-size="86" font-weight="700" letter-spacing="-2" fill="#F4F2FA">Tetris</text>
+
+  <text x="114" y="228" font-family="'SF Mono',ui-monospace,Menlo,Consolas,monospace"
+        font-size="22" letter-spacing="3" fill="#9A93B5">console game &#183; OOP practice &#183; .NET</text>
+</svg>
