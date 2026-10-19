@@ -1,23 +1,23 @@
 ﻿using Tetris;
 
-var board = new Board(10, 20);
-
-Console.WriteLine(board.IsInside(0,0));
-Console.WriteLine(board.IsInside(9,19));
-Console.WriteLine(board.IsInside(10,0));
-Console.WriteLine(board.IsInside(0,20));
-Console.WriteLine(board.IsInside(0,20));
-Console.WriteLine(board.IsInside(-1,5));
+var t = new Tetromino([(-1, 0), (0, 0), (1, 0), (0, 1)], 4, 1);
 
 
-board.Draw();
+var board1 = new Board(10, 5);
+foreach (var cell in t.GetAbsoluteCells())
+{
+    board1.SetCell(cell.x, cell.y, 1);
+}
+board1.Draw();
 
-Console.WriteLine(board.SetCell(0,0,1));
-Console.WriteLine(board.SetCell(9,19,1));
-Console.WriteLine(board.SetCell(10,0,1));
+Console.WriteLine("---");
 
-board.Draw();
 
-Console.WriteLine(board.IsEmpty(0,0));
-Console.WriteLine(board.IsEmpty(5,5));
-Console.WriteLine(board.IsEmpty(10,0));
+t.RotateRight();
+
+var board2 = new Board(10, 5);
+foreach (var cell in t.GetAbsoluteCells())
+{
+    board2.SetCell(cell.x, cell.y, 1);
+}
+board2.Draw();
