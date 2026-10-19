@@ -51,4 +51,16 @@ public class Board
         _grid[y, x] = value;
         return true;
     }
+
+    public bool CanPlace(Tetromino piece)
+    {
+        foreach (var cell in piece.GetAbsoluteCells())
+        {
+            if (!IsEmpty(cell.x, cell.y))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
