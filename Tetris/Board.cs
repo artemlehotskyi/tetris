@@ -63,4 +63,12 @@ public class Board
         }
         return true;
     }
+
+    public void Lock(Tetromino piece)
+    {
+        foreach (var cell in piece.GetAbsoluteCells())
+        {
+            SetCell(cell.x, cell.y, 1);
+        }
+    }
 }
