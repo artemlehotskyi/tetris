@@ -37,10 +37,10 @@ actually behaves differently — not as decoration.
 
 | № | Step | What it is about | Status |
 |---|---|---|---|
-| 1 | Board | grid, bounds, cell state, `Draw` | 🔨 in progress |
-| 2 | Tetromino | one class, shape passed as data through the constructor; `RotateLeft` / `RotateRight` / `Move` | ⏳ planned |
-| 3 | Collision | `CanPlace` check, move-then-revert | ⏳ planned |
-| 4 | Game loop | non-blocking input (`Console.KeyAvailable` / `ReadKey`), timing, rendering | ⏳ planned |
+| 1 | Board | grid, bounds (`IsInside`), cell state (`IsEmpty` / `SetCell`), `Draw` | ✅ done |
+| 2 | Tetromino | one class, shape passed as data through the constructor; `RotateLeft` / `RotateRight` / `Move`, `GetAbsoluteCells` for board coordinates | ✅ done |
+| 3 | Collision | `CanPlace` check, `Lock` to settle a piece; move-then-revert checked by hand in `Program.cs` | ✅ done |
+| 4 | Game loop | non-blocking input (`Console.KeyAvailable` / `ReadKey`), timing, rendering | ⏳ next |
 | 5 | Polymorphism | subclasses only where behaviour differs: the O-piece doesn't rotate, the I-piece needs wall kicks | 🔒 after the course covers inheritance |
 
 ---
@@ -51,6 +51,10 @@ actually behaves differently — not as decoration.
 git clone https://github.com/artemlehotskyi/tetris.git && cd tetris
 dotnet run --project Tetris
 ```
+
+There's no playable game yet. For now `Program.cs` is a hand-written check of steps 1–3:
+it places a T-piece, pushes it past the floor and back, locks it, draws the board, and
+tests overlap and the left wall, printing `True` / `False` for each case.
 
 Requires the .NET 10 SDK. Run it in a real terminal rather than the IDE's output pane once
 the game loop lands — non-blocking key input needs an interactive console.
